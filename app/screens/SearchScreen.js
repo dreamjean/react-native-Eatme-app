@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
+import { SearchBar } from "../components";
+
 const SearchScreen = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <Container>
-      <Text>Search Screen</Text>
+      <SearchBar
+        value={searchQuery}
+        onChangeText={(text) => setSearchQuery(text)}
+      />
     </Container>
   );
 };
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
-  justify-content: center;
+  background-color: #fff;
 `;
-const Text = styled.Text``;
 
 export default SearchScreen;

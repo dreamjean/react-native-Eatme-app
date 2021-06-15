@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from "expo-app-loading";
 import React from "react";
 
+import { Theme } from "./app/components";
 import useLoadAssets from "./app/hooks/useLoadAssets";
 import AppNavigator from "./app/navigation/AppNavigator";
 
@@ -19,8 +20,10 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
+    <Theme>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </Theme>
   );
 }

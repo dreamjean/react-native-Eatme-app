@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import * as Yup from "yup";
 
-import { SearchBar } from "../components";
+import { Form, FormSearchField } from "../components";
+
+let validationSchema = Yup.object().shape({
+  searchQuery: Yup.string(),
+});
 
 const SearchScreen = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
   return (
     <Container>
-      <SearchBar
-        value={searchQuery}
-        onChangeText={(text) => setSearchQuery(text)}
-      />
+      <Form
+        initialValues={{ searchQuery: "" }}
+        validationSchema={validationSchema}
+        onSubmit={(values) => console.log(values)}
+      >
+        <FormSearchField name="searchQuery" />
+      </Form>
     </Container>
   );
 };

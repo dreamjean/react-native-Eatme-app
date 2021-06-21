@@ -27,14 +27,12 @@ const SearchInput = ({ touched, error, ...rest }) => {
 const Wrapper = styled.View`
   flex-direction: row;
   justify-content: center;
-  width: 100%;
 
   ${({ theme: { colors, radii, space } }) => ({
-    backgroundColor: colors.gray2,
-    borderRadius: radii.l,
-    paddingVertical: space.s3,
-    paddingHorizontal: space.m,
-    marginVertical: space.s3,
+    backgroundColor: colors.gray1,
+    borderRadius: radii.s,
+    padding: space.s2,
+    margin: space.m1,
   })}
 `;
 

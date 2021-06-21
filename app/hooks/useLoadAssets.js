@@ -1,6 +1,6 @@
 import { Asset } from "expo-asset";
 import * as Font from "expo-font";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { fonts, images } from "../config/assets";
 
@@ -20,13 +20,13 @@ const useLoadAssets = () => {
   const loadAssetsAsync = async () => {
     const imageAssets = cacheImages(images);
 
-    return await Promise.all([Font.loadAsync(fonts), ...imageAssets]);
-    // setAssetsLoaded(true);
+    await Promise.all([Font.loadAsync(fonts), ...imageAssets]);
+    setAssetsLoaded(true);
   };
 
-  // useEffect(() => {
-  //   loadAssetsAsync();
-  // });
+  useEffect(() => {
+    loadAssetsAsync();
+  });
 
   return { assetsLoaded, setAssetsLoaded, loadAssetsAsync };
 };

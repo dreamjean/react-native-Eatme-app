@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import * as Yup from "yup";
 
-import { Form, FormSearchField } from "../components";
-
-let validationSchema = Yup.object().shape({
-  searchQuery: Yup.string(),
-});
+import { ResultsList, SearchInput } from "../components";
+import useSearchResults from "../hooks/useSearchResults";
+import { Text } from "../styles";
 
 const SearchScreen = () => {
+  const [term, setTerm] = useState("");
+  const { searchApi, results: businesses, error } = useSearchResults();
+
   return (
     <Container>
-      <Form
-        initialValues={{ searchQuery: "" }}
-        validationSchema={validationSchema}
-        onSubmit={(values) => console.log(values)}
-      >
-        <FormSearchField name="searchQuery" />
-      </Form>
+      <SearchInput
+        error={error}
+        onChangeText={(text) => setTerm(text)}
+        onEndEditing={() => searchApi(term)}
+        value={term}
+      />
+      {error ? <Text>{error}</Text> : null}
+      <Text>We have found {businesses?.length} results</Text>
+      <ResultsList title="Cost Effective" />
+      <ResultsList title="Bit Pricier" />
+      <ResultsList title="Bit Spender" />
     </Container>
   );
 };

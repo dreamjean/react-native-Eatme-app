@@ -9,6 +9,9 @@ const getBusinesses = (searchTerm) =>
     location: "san jose",
   });
 
+const getBusiness = (id) => client.get(`/${id}`);
+
 export default {
   getListings: getBusinesses,
+  getBusiness,
 };

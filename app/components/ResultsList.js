@@ -1,19 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 
-const ResultsList = ({ title }) => {
+import { Text } from "../styles";
+import ResultsDetails from "./ResultsDetails";
+
+const ResultsList = ({ title, results }) => {
+  if (!results.length) return null;
+
   return (
     <Container>
-      <Text>{title}</Text>
+      <Title title1>{title}</Title>
+      <FlatList
+        data={results}
+        horizontal
+        keyExtractor={(result) => result.id}
+        renderItem={({ item }) => <ResultsDetails result={item} />}
+        showsHorizontalScrollIndicator={false}
+      />
     </Container>
   );
 };
 
 const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 10px;
 `;
-const Text = styled.Text``;
+
+const Title = styled(Text)`
+  margin-left: 15px;
+  margin-bottom: 5px;
+`;
+
+const FlatList = styled.FlatList``;
 
 export default ResultsList;

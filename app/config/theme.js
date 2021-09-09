@@ -5,8 +5,11 @@ export default {
   fonts: ["Montserrat-Regular", "Montserrat-SemiBold", "Montserrat-Bold"],
   size: {
     s1: 10,
-    m1: 17,
-    m2: 18,
+    s2: 12,
+    m1: 15,
+    m2: 16,
+    l1: 18,
+    l2: 20,
   },
   space: {
     s1: 5,

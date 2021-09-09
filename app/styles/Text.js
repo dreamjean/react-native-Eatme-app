@@ -1,5 +1,12 @@
 import styled, { css } from "styled-components";
 
+const title1Style = css`
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[2],
+    fontSize: size.l1,
+  })}
+`;
+
 const body1Style = css`
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[0],
@@ -55,6 +62,7 @@ const Text = styled.Text`
   ${({ body2 }) => body2 && body2Style}
   ${({ button }) => button && buttonStyle}
   ${({ danger }) => danger && dangerStyle}
+  ${({ title1 }) => title1 && title1Style}
 `;
 
 export default Text;

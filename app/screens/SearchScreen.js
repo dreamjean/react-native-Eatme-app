@@ -5,12 +5,22 @@ import { ResultsList, SearchInput } from "../components";
 import useSearchResults from "../hooks/useSearchResults";
 import { Text } from "../styles";
 
+const results = [
+  { title: "Cost Effective", price: "$" },
+  { title: "Bit Pricier", price: "$$" },
+  { title: "Bit Spender", price: "$$$" },
+];
+
 const SearchScreen = () => {
   const [term, setTerm] = useState("");
   const { searchApi, results: businesses, error } = useSearchResults();
 
+  const filterResultsByPrice = (price) => {
+    return businesses.filter((bussiness) => bussiness.price === price);
+  };
+
   return (
-    <Container>
+    <>
       <SearchInput
         error={error}
         onChangeText={(text) => setTerm(text)}
@@ -18,17 +28,19 @@ const SearchScreen = () => {
         value={term}
       />
       {error ? <Text>{error}</Text> : null}
-      <Text>We have found {businesses?.length} results</Text>
-      <ResultsList title="Cost Effective" />
-      <ResultsList title="Bit Pricier" />
-      <ResultsList title="Bit Spender" />
-    </Container>
+      <ScrollView>
+        {results.map((result) => (
+          <ResultsList
+            key={result.title}
+            results={filterResultsByPrice(result.price)}
+            title={result.title}
+          />
+        ))}
+      </ScrollView>
+    </>
   );
 };
 
-const Container = styled.View`
-  flex: 1;
-  background-color: #fff;
-`;
+const ScrollView = styled.ScrollView``;
 
 export default SearchScreen;

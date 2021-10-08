@@ -6,7 +6,7 @@ import React from "react";
 
 import { Theme } from "./app/components";
 import useLoadAssets from "./app/hooks/useLoadAssets";
-import AppNavigator from "./app/navigation/AppNavigator";
+import DrawerNavigator from "./app/navigation/DrawerNavigator";
 
 export default function App() {
   const { assetsLoaded, setAssetsLoaded, loadAssetsAsync } = useLoadAssets();
@@ -24,7 +24,7 @@ export default function App() {
   return (
     <Theme>
       <NavigationContainer>
-        <AppNavigator />
+        <DrawerNavigator />
       </NavigationContainer>
     </Theme>
   );

@@ -1,23 +1,99 @@
 import styled, { css } from "styled-components";
 
-const title1Style = css`
+const titleStyle = css`
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[0],
+    fontSize: size.large,
+  })}
+`;
+
+const h1Style = css`
+  line-height: 36px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[1],
+    fontSize: size.h1,
+  })}
+`;
+
+const h2Style = css`
+  line-height: 30px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[1],
+    fontSize: size.h2,
+  })}
+`;
+
+const h3Style = css`
+  line-height: 22px;
+
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[2],
-    fontSize: size.l1,
+    fontSize: size.h3,
+  })}
+`;
+
+const h4Style = css`
+  line-height: 22px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[2],
+    fontSize: size.h4,
+  })}
+`;
+
+const h5Style = css`
+  line-height: 22px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[2],
+    fontSize: size.h5,
   })}
 `;
 
 const body1Style = css`
+  line-height: 36px;
+
   ${({ theme: { fonts, size } }) => ({
-    fontFamily: fonts[0],
-    fontSize: size.m1,
+    fontFamily: fonts[3],
+    fontSize: size.body1,
   })}
 `;
 
 const body2Style = css`
+  line-height: 30px;
+
   ${({ theme: { fonts, size } }) => ({
-    fontFamily: fonts[0],
-    fontSize: size.m2,
+    fontFamily: fonts[3],
+    fontSize: size.body2,
+  })}
+`;
+
+const body3Style = css`
+  line-height: 22px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[3],
+    fontSize: size.body3,
+  })}
+`;
+
+const body4Style = css`
+  line-height: 22px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[3],
+    fontSize: size.body4,
+  })}
+`;
+
+const body5Style = css`
+  line-height: 22px;
+
+  ${({ theme: { fonts, size } }) => ({
+    fontFamily: fonts[3],
+    fontSize: size.body5,
   })}
 `;
 
@@ -51,7 +127,7 @@ const Text = styled.Text`
     opacity,
     theme: { colors },
   }) => ({
-    color: white ? colors.white : secondary ? colors.secondary : colors.dark,
+    color: white ? colors.white : secondary ? colors.gray : colors.darkBlue,
     textAlign: center ? "center" : right ? "right" : "left",
     marginBottom,
     marginTop,
@@ -60,9 +136,17 @@ const Text = styled.Text`
 
   ${({ body1 }) => body1 && body1Style}
   ${({ body2 }) => body2 && body2Style}
+  ${({ body3 }) => body3 && body3Style}
+  ${({ body4 }) => body4 && body4Style}
+  ${({ body5 }) => body5 && body5Style}
   ${({ button }) => button && buttonStyle}
   ${({ danger }) => danger && dangerStyle}
-  ${({ title1 }) => title1 && title1Style}
+  ${({ h1 }) => h1 && h1Style}
+  ${({ h2 }) => h2 && h2Style}
+  ${({ h3 }) => h3 && h3Style}
+  ${({ h4 }) => h4 && h4Style}
+  ${({ h5 }) => h5 && h5Style}
+  ${({ title }) => title && titleStyle}
 `;
 
 export default Text;

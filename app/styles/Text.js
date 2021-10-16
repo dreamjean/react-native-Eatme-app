@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const titleStyle = css`
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[0],
-    fontSize: size.large,
+    fontSize: size.xl,
   })}
 `;
 
@@ -12,7 +12,7 @@ const h1Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[1],
-    fontSize: size.h1,
+    fontSize: size.l,
   })}
 `;
 
@@ -21,7 +21,7 @@ const h2Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[1],
-    fontSize: size.h2,
+    fontSize: size.m,
   })}
 `;
 
@@ -30,7 +30,7 @@ const h3Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[2],
-    fontSize: size.h3,
+    fontSize: size.s3,
   })}
 `;
 
@@ -39,7 +39,7 @@ const h4Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[2],
-    fontSize: size.h4,
+    fontSize: size.s2,
   })}
 `;
 
@@ -48,7 +48,7 @@ const h5Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[2],
-    fontSize: size.h5,
+    fontSize: size.s1,
   })}
 `;
 
@@ -57,7 +57,7 @@ const body1Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[3],
-    fontSize: size.body1,
+    fontSize: size.l,
   })}
 `;
 
@@ -66,7 +66,7 @@ const body2Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[3],
-    fontSize: size.body2,
+    fontSize: size.m,
   })}
 `;
 
@@ -75,7 +75,7 @@ const body3Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[3],
-    fontSize: size.body3,
+    fontSize: size.s3,
   })}
 `;
 
@@ -84,7 +84,7 @@ const body4Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[3],
-    fontSize: size.body4,
+    fontSize: size.s2,
   })}
 `;
 
@@ -93,14 +93,14 @@ const body5Style = css`
 
   ${({ theme: { fonts, size } }) => ({
     fontFamily: fonts[3],
-    fontSize: size.body5,
+    fontSize: size.s1,
   })}
 `;
 
 const dangerStyle = css`
   ${({ theme: { colors, fonts, size, space } }) => ({
     color: colors.danger,
-    fontFamily: fonts[1],
+    fontFamily: fonts[3],
     fontSize: size.s1,
     marginLeft: space.m2,
   })}
@@ -108,8 +108,8 @@ const dangerStyle = css`
 
 const buttonStyle = css`
   ${({ theme: { fonts, size, colors } }) => ({
-    fontFamily: fonts[0],
-    fontSize: size.m1,
+    fontFamily: fonts[1],
+    fontSize: size.s3,
     color: colors.white,
     textAlign: "center",
     textTransform: "uppercase",

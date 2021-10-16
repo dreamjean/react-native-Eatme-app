@@ -6,9 +6,9 @@ import React, { useEffect } from "react";
 import Animated, { interpolateNode } from "react-native-reanimated";
 import styled from "styled-components";
 
+import { IconButton } from "../../components";
 import { dummyData, icons, theme } from "../../config";
 import { Image, Text, View } from "../../styles";
-import IconButton from "../IconButton";
 import DrawerItem from "./DrawerItem";
 
 const { colors, space } = theme;
@@ -59,11 +59,17 @@ const DrawerContent = ({ setDrawerProgress, ...props }) => {
               key={screen.id}
               label={screen.label}
               icon={screen.icon}
+              onPress={() => props.navigation.navigate(screen.label)}
             />
           ))}
           <View seperator />
           {drawerItems.map((item) => (
-            <DrawerItem key={item.id} label={item.label} icon={item.icon} />
+            <DrawerItem
+              key={item.id}
+              label={item.label}
+              icon={item.icon}
+              onPress={() => props.navigation.navigate(item.label)}
+            />
           ))}
         </Container>
         <Footer>

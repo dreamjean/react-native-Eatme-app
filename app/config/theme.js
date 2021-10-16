@@ -9,17 +9,12 @@ export default {
     "Poppins-Regular",
   ],
   size: {
-    large: 40,
-    h1: 30,
-    h2: 22,
-    h3: 16,
-    h4: 14,
-    h5: 12,
-    body1: 30,
-    body2: 22,
-    body3: 16,
-    body4: 14,
-    body5: 12,
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m: 22,
+    l: 30,
+    xl: 40,
   },
   space: {
     s1: 8,
@@ -31,5 +26,6 @@ export default {
   radii: {
     s: 8,
     m: 12,
+    l: 20,
   },
 };

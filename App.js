@@ -3,10 +3,12 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from "expo-app-loading";
 import React from "react";
+import { Provider } from "react-redux";
 
 import { Theme } from "./app/components";
 import useLoadAssets from "./app/hooks/useLoadAssets";
 import DrawerNavigator from "./app/navigation/DrawerNavigator";
+import { store } from "./app/store/configureStore";
 
 export default function App() {
   const { assetsLoaded, setAssetsLoaded, loadAssetsAsync } = useLoadAssets();
@@ -22,10 +24,12 @@ export default function App() {
   }
 
   return (
-    <Theme>
-      <NavigationContainer>
-        <DrawerNavigator />
-      </NavigationContainer>
-    </Theme>
+    <Provider store={store}>
+      <Theme>
+        <NavigationContainer>
+          <DrawerNavigator />
+        </NavigationContainer>
+      </Theme>
+    </Provider>
   );
 }

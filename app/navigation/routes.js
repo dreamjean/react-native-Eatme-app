@@ -6,4 +6,5 @@ export default Object.freeze({
   FAVOURITE: "Favourite",
   NOTIFICATION: "Notification",
   MY_WALLET: "My Walet",
+  SETTINGS: "Settings",
 });

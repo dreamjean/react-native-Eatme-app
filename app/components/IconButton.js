@@ -1,6 +1,7 @@
 import React from "react";
 import { Pressable } from "react-native";
 
+import { colors } from "../config";
 import Icon from "./Icon";
 
 const IconButton = ({ onPress, style, ...res }) => {
@@ -11,6 +12,7 @@ const IconButton = ({ onPress, style, ...res }) => {
           alignItems: "center",
           justifyContent: "center",
           opacity: pressed ? 0.5 : 1,
+          backgroundColor: pressed ? colors.lightOrange3 : null,
         }),
         style,
       ]}

@@ -7,17 +7,18 @@ const Icon = ({
   color,
   IconComponent,
   icon,
-  iconRatio = 0.7,
+  iconRatio = 1,
   image,
+  round = false,
   size,
   tintColor,
 }) => {
   return (
-    <Container {...{ backgroundColor, borderColor, size }}>
+    <Container {...{ backgroundColor, borderColor, round, size }}>
       {icon && (
         <IconComponent name={icon} size={iconRatio * size} color={color} />
       )}
-      {image && <Image source={image} {...{ tintColor }} />}
+      {image && <Image source={image} {...{ tintColor, iconRatio, size }} />}
     </Container>
   );
 };
@@ -25,21 +26,22 @@ const Icon = ({
 const Container = styled.View`
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
-  ${({ backgroundColor, borderColor, size }) => ({
+  ${({ backgroundColor, round, borderColor, size, theme: { radii } }) => ({
     backgroundColor,
     borderColor,
     borderWidth: borderColor ? 1 : 0,
-    borderRadius: size / 2,
+    borderRadius: round ? size / 2 : radii.m,
     height: size,
     width: size,
   })}
 `;
 
 const Image = styled.Image`
-  ${({ tintColor }) => ({
-    width: "100%",
-    height: "100%",
+  ${({ tintColor, iconRatio, size }) => ({
+    width: size * iconRatio,
+    height: size * iconRatio,
     tintColor,
   })}
 `;

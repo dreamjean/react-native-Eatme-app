@@ -7,9 +7,10 @@ import Animated, {
 } from "react-native-reanimated";
 import styled from "styled-components";
 
-import { DrawerContent } from "../components";
 import { colors } from "../config";
-import AppNavigator from "./AppNavigator";
+import DrawerContent from "./drawer/DrawerContent";
+import MainNavigator from "./MainNavigator";
+import routes from "./routes";
 
 const Drawer = createDrawerNavigator();
 
@@ -40,7 +41,7 @@ const DrawerNavigator = () => {
         style={{ flex: 1 }}
       >
         <Drawer.Navigator
-          initialRouteName="Screen"
+          initialRouteName={routes.HOME}
           drawerContent={(props) => (
             <DrawerContent {...props} setDrawerProgress={setDrawerProgress} />
           )}
@@ -63,7 +64,7 @@ const DrawerNavigator = () => {
           }}
         >
           <Drawer.Screen name="Screens">
-            {(props) => <AppNavigator {...props} style={animatedStyle} />}
+            {(props) => <MainNavigator {...props} style={animatedStyle} />}
           </Drawer.Screen>
         </Drawer.Navigator>
       </LinearGradient>

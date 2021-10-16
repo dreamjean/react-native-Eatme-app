@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 import { Image, Text } from "../../styles";
 
-const DrawerItem = ({ backgroundColor, icon, label, onPress }) => {
+const DrawerItem = ({ icon, label, focused, onPress }) => {
   return (
-    <Touchable {...{ backgroundColor, onPress }}>
+    <Touchable {...{ focused, onPress }}>
       <Image icon source={icon} />
       <Text h4 white>
         {label}
@@ -19,12 +19,12 @@ const Touchable = styled(RectButton)`
   flex-direction: row;
   align-items: center;
 
-  ${({ backgroundColor, theme: { space, radii } }) => ({
-    backgroundColor,
+  ${({ focused, theme: { colors, space, radii } }) => ({
+    backgroundColor: focused ? colors.transparentBlack1 : null,
     borderRadius: radii.s,
-    // marginBottom: space.s1,
     paddingVertical: space.s1,
-    paddingHorizontal: space.m2,
+    paddingHorizontal: space.s3,
+    marginLeft: space.s1,
   })}
 `;
 

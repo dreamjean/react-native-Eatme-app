@@ -22,6 +22,8 @@ export default {
     s3: 15,
     m1: 20,
     m2: 24,
+    l1: 30,
+    l2: 50,
   },
   radii: {
     s: 8,

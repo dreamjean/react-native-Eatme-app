@@ -1,4 +1,3 @@
-import React from "react";
 import { Pressable, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
@@ -43,7 +42,7 @@ const TabBarButton = ({
     return {
       backgroundColor: withTiming(
         isActive.value ? activeBackgroundColor : inactiveBackgroundColor,
-        { duration: 500 }
+        config
       ),
     };
   });
@@ -56,7 +55,7 @@ const TabBarButton = ({
       }}
       style={styles.container}
     >
-      <Animated.View style={[styles.tab, outerStyle]}>
+      <Animated.View style={outerStyle}>
         <Animated.View style={[styles.icon, innerStyle]}>
           {renderActiveIcon({
             route,
@@ -86,11 +85,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     flexDirection: "row",
-    height: 50,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 25,
-    width: "100%",
+    padding: theme.space.s2,
   },
   label: {
     marginLeft: theme.space.s1,

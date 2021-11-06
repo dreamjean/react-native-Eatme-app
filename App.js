@@ -7,7 +7,8 @@ import { Provider } from "react-redux";
 
 import { Theme } from "./app/components";
 import useLoadAssets from "./app/hooks/useLoadAssets";
-import DrawerNavigator from "./app/navigation/DrawerNavigator";
+// import DrawerNavigator from "./app/navigation/DrawerNavigator";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 import { store } from "./app/store/configureStore";
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
     <Provider store={store}>
       <Theme>
         <NavigationContainer>
-          <DrawerNavigator />
+          <AuthNavigator />
         </NavigationContainer>
       </Theme>
     </Provider>

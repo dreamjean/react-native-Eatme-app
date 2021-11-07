@@ -1,4 +1,3 @@
-import React from "react";
 import { Platform } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";

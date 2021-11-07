@@ -1,19 +1,19 @@
-import React from "react";
 import { RectButton } from "react-native-gesture-handler";
 import styled from "styled-components";
 
 import { Text } from "../styles";
 
 const Button = ({
+  bgColor,
+  textStyle,
   title,
   onPress,
   marginVertical,
-  padding = 15,
   primary,
-  textStyle,
+  width,
 }) => {
   return (
-    <Container {...{ onPress, marginVertical, padding, primary }}>
+    <Container {...{ bgColor, onPress, marginVertical, primary, width }}>
       <Text button style={textStyle}>
         {title}
       </Text>
@@ -22,12 +22,22 @@ const Button = ({
 };
 
 const Container = styled(RectButton)`
-  width: 100%;
-  ${({ padding, marginVertical, primary, theme: { colors, radii } }) => ({
-    backgroundColor: primary ? colors.primary : colors.secondary,
-    borderRadius: radii.s,
-    padding,
+  ${({
+    bgColor,
+    width,
     marginVertical,
+    primary,
+    theme: { colors, space, radii },
+  }) => ({
+    backgroundColor: bgColor
+      ? bgColor
+      : primary
+      ? colors.primary
+      : colors.secondary,
+    borderRadius: radii.s,
+    padding: space.s2,
+    marginVertical,
+    width,
   })}
 `;
 

@@ -1,28 +1,45 @@
+import Animated, {
+  Extrapolate,
+  interpolate,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 import styled from "styled-components/native";
 
-import { images } from "../../config";
+import { constants } from "../../config";
 import { Image } from "../../styles";
 
-const SlideHeader = () => {
+const { width, SLIDE_HEIGHT } = constants;
+
+const SlideHeader = ({ bgImage, index, x, picture }) => {
+  const style = useAnimatedStyle(() => {
+    const opacity = interpolate(
+      x.value,
+      [width * (index - 0.5), width * index, width * (index + 0.5)],
+      [0, 1, 0],
+      Extrapolate.CLAMP
+    );
+    return {
+      position: "absolute",
+      alignSelf: "center",
+      bottom: -30,
+      opacity,
+    };
+  });
+
   return (
     <Container>
-      <Image bg resizeMode="stretch" source={images.background01} />
-      <Heading>
-        <Image logo resizeMode="contain" source={images.logo02} />
-        <Image boarding source={images.favouriteFood} />
-      </Heading>
+      <Image bg resizeMode="stretch" source={bgImage} />
+      <Animated.View style={style}>
+        <Image boarding resizeMode="contain" source={picture} />
+      </Animated.View>
     </Container>
   );
 };
 
 const Container = styled.View`
-  flex: 1;
-`;
-
-const Heading = styled.View`
-  position: absolute;
-  top: 50px;
-  align-self: center;
+  width: ${width}px;
+  height: ${SLIDE_HEIGHT}px;
+  align-items: center;
   justify-content: center;
 `;
 

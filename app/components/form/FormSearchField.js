@@ -1,5 +1,4 @@
 import { useFormikContext } from "formik";
-import React from "react";
 
 import SearchInput from "../SearchInput";
 import ErrorMessage from "./ErrorMessage";

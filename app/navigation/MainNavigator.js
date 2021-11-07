@@ -1,5 +1,4 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React from "react";
 import Animated from "react-native-reanimated";
 
 import { Icon, IconButton } from "../components";

@@ -108,11 +108,11 @@ const dangerStyle = css`
 
 const buttonStyle = css`
   ${({ theme: { fonts, size, colors } }) => ({
-    fontFamily: fonts[1],
+    fontFamily: fonts[2],
     fontSize: size.s3,
     color: colors.white,
     textAlign: "center",
-    textTransform: "uppercase",
+    textTransform: "capitalize",
   })}
 `;
 

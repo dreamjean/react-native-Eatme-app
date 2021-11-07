@@ -8,4 +8,5 @@ export default Object.freeze({
   MY_WALLET: "MyWalet",
   ON_BOADING: "OnBoaring",
   SETTINGS: "Settings",
+  WELCOME: "Welcome",
 });

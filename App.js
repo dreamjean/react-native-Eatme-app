@@ -2,7 +2,6 @@ import "react-native-gesture-handler";
 
 import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from "expo-app-loading";
-import React from "react";
 import { Provider } from "react-redux";
 
 import { Theme } from "./app/components";

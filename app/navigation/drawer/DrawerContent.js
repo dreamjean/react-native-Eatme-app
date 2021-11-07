@@ -2,12 +2,13 @@ import {
   DrawerContentScrollView,
   useDrawerProgress,
 } from "@react-navigation/drawer";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Animated, { interpolateNode } from "react-native-reanimated";
 import styled from "styled-components";
 
 import { IconButton } from "../../components";
-import { dummyData, icons, theme } from "../../config";
+import { icons, theme } from "../../config";
+import dummyData from "../../data/dummyData";
 import { Image, Text, View } from "../../styles";
 import DrawerItem from "./DrawerItem";
 
@@ -19,7 +20,6 @@ const DrawerContent = ({ setDrawerProgress, ...props }) => {
 
   useEffect(() => {
     setDrawerProgress(progress);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [progress]);
 
   const scale = interpolateNode(progress, {

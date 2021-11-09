@@ -35,7 +35,7 @@ const LoginScreen = ({ navigation }) => {
   // const [error, setError] = useState();
   const [securePassword, setSeurePassword] = useState(true);
   const [isRemember, setIsRemember] = useState(false);
-  const [inputs] = useState([]);
+  const [inputs] = useState({});
 
   const focusNextField = (nextField) => inputs[nextField].focus();
 
@@ -47,7 +47,6 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <AuthContainer
-      otp
       title="Let's Sign You In"
       subTitle="Welcome back, you've been missed"
     >

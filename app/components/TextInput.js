@@ -61,7 +61,7 @@ const Input = styled.TextInput`
     color: colors.darkGray,
     fontSize: size.body4,
     fontFamily: fonts[3],
-    marginHorizontal: space.s2,
+    marginLeft: space.s2,
   })}
 `;
 

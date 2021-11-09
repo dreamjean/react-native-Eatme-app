@@ -30,7 +30,7 @@ const AuthContainer = ({ title, subTitle, otp = false, children }) => {
           </Text>
         </TextBox>
         <Medium>{children}</Medium>
-        {otp && (
+        {!otp && (
           <Social>
             <SocialLogin fb label="Contaiue with fackbook" logo={icons.fb} />
             <SocialLogin label="Contaiue with google" logo={icons.google} />

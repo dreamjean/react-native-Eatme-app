@@ -6,7 +6,7 @@ import { Image, Text } from "../../styles";
 const DrawerItem = ({ icon, label, focused, onPress }) => {
   return (
     <Touchable {...{ focused, onPress }}>
-      <Image icon source={icon} />
+      <Image icon1 source={icon} />
       <Text h4 white>
         {label}
       </Text>

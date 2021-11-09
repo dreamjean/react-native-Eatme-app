@@ -23,7 +23,7 @@ const boardingStyle = css`
   height: ${SLIDE_IMG_HEIGHT}px;
 `;
 
-const iconStyle = css`
+const icon1Style = css`
   width: 24px;
   height: 24px;
 
@@ -33,17 +33,37 @@ const iconStyle = css`
   })}
 `;
 
-const logoStyle = css`
+const icon2Style = css`
+  width: 26px;
+  height: 26px;
+
+  ${({ theme: { space } }) => ({
+    marginRight: space.s2,
+  })}
+`;
+
+const logo1Style = css`
   width: ${LOGO_WIDTH}px;
   height: 60px;
+`;
+
+const logo2Style = css`
+  width: 20px;
+  height: 20px;
+
+  ${({ theme: { space } }) => ({
+    marginRight: space.s3,
+  })}
 `;
 
 const Image = styled.Image`
   ${({ avatar }) => avatar && avatarStyle}
   ${({ bg }) => bg && bgStyle}
   ${({ boarding }) => boarding && boardingStyle}
-  ${({ icon }) => icon && iconStyle}
-  ${({ logo }) => logo && logoStyle}
+  ${({ icon1 }) => icon1 && icon1Style}
+  ${({ icon2 }) => icon2 && icon2Style}
+  ${({ logo1 }) => logo1 && logo1Style}
+  ${({ logo2 }) => logo2 && logo2Style}
 `;
 
 export default Image;

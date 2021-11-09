@@ -1,35 +1,55 @@
-import { MaterialIcons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { forwardRef } from "react";
+import { Pressable } from "react-native";
 import styled from "styled-components";
 
 import { colors } from "../config";
 
-const TextInput = ({ touched, error, icon, width = "100%", ...rest }) => {
-  const dangerPrimery = error ? colors.danger : colors.secondary;
-  const reColor = !touched ? colors.gray2 : dangerPrimery;
+const TextInput = forwardRef(
+  (
+    { error, touched, leftIcon, rightIcon, errorIcon, width, onPress, ...rest },
+    ref
+  ) => {
+    const dangerPrimery = error ? colors.red : colors.green;
+    const reColor = !touched ? colors.darkGray : dangerPrimery;
 
-  return (
-    <Wrapper {...{ error, touched, width }}>
-      {icon && <MaterialIcons name={icon} color={reColor} size={24} />}
-      <Input
-        {...rest}
-        placeholderTextColor={colors.gray2}
-        selectionColor={colors.secondary}
-        underlineColorAndroid={colors.transparent}
-      />
-    </Wrapper>
-  );
-};
+    return (
+      <Wrapper {...{ error, touched, width }}>
+        <Feather name={leftIcon} size={24} color={reColor} />
+        <Input
+          {...{ ref }}
+          {...rest}
+          numberOfLines={1}
+          placeholderTextColor={colors.gray2}
+          selectionColor={colors.orange}
+          underlineColorAndroid={colors.transparent}
+        />
+        {touched && (
+          <Pressable {...{ onPress }}>
+            <Feather
+              name={error ? errorIcon : rightIcon}
+              size={24}
+              color={reColor}
+            />
+          </Pressable>
+        )}
+      </Wrapper>
+    );
+  }
+);
 
 const Wrapper = styled.View`
   flex-direction: row;
   justify-content: center;
 
-  ${({ width, theme: { colors, radii, space } }) => ({
-    backgroundColor: colors.gray2,
-    borderRadius: radii.l,
-    paddingVertical: space.s3,
-    paddingHorizontal: space.m,
-    marginVertical: space.s3,
+  ${({ error, touched, width, theme: { colors, radii, space } }) => ({
+    backgroundColor: colors.lightGray2,
+    borderColor: touched && error ? colors.red : colors.transparent,
+    borderWidth: 1,
+    borderRadius: radii.s,
+    padding: space.s2,
+    paddingHorizontal: space.m1,
+    marginVertical: space.s1,
     width,
   })}
 `;
@@ -37,11 +57,11 @@ const Wrapper = styled.View`
 const Input = styled.TextInput`
   flex: 1;
 
-  ${({ theme: { colors, fonts, space, size } }) => ({
-    color: colors.medium,
-    fontSize: size.body2,
-    fontFamily: fonts[0],
-    marginLeft: space.s2,
+  ${({ theme: { colors, fonts, size, space } }) => ({
+    color: colors.darkGray,
+    fontSize: size.body4,
+    fontFamily: fonts[3],
+    marginHorizontal: space.s2,
   })}
 `;
 

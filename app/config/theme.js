@@ -28,6 +28,7 @@ export default {
   radii: {
     s: 8,
     m: 12,
+    m2: 14,
     l: 20,
   },
 };

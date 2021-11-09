@@ -1,4 +1,7 @@
+export { default as AuthContainer } from "./auth/AuthContainer";
+export { default as TextButton } from "./auth/TextButton";
 export { default as Button } from "./Button";
+export { default as CurrentSwitch } from "./CurrentSwitch";
 export { default as Icon } from "./Icon";
 export { default as IconButton } from "./IconButton";
 export { default as PaginationDot } from "./onBoarding/PaginationDot";

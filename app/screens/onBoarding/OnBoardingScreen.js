@@ -30,8 +30,10 @@ const OnBoardingScreen = ({ navigation }) => {
 
   const style = useAnimatedStyle(() => {
     return {
+      flex: 1,
       flexDirection: "row",
       width: width * slides.length,
+      marginTop: 30,
       transform: [{ translateX: -x.value }],
     };
   });
@@ -40,7 +42,7 @@ const OnBoardingScreen = ({ navigation }) => {
     <Container>
       <HeaderContainer>
         <LogoBox>
-          <Image logo source={images.logo02} />
+          <Image logo1 source={images.logo02} />
         </LogoBox>
 
         <Animated.ScrollView
@@ -76,10 +78,10 @@ const OnBoardingScreen = ({ navigation }) => {
               description={slide.description}
               buttonLabel={slide.buttonLabel}
               last={index === slides.length - 1}
-              onSkipPress={() => navigation.navigate(routes.WELCOME)}
+              onSkipPress={() => navigation.navigate(routes.LOGIN)}
               onPress={() => {
-                const last = index === slides.length - 1;
-                if (last) navigation.navigate(routes.WELCOME);
+                const lastIndex = index === slides.length - 1;
+                if (lastIndex) navigation.navigate("Login");
 
                 scroll.current.scrollTo({
                   x: width * (index + 1),
@@ -103,15 +105,15 @@ const Container = styled.View`
   })}
 `;
 
-const HeaderContainer = styled.View`
-  height: ${SLIDE_HEIGHT + 30}px;
-`;
-
 const LogoBox = styled.View`
   position: absolute;
-  top: 50px;
+  top: 40px;
   align-self: center;
   z-index: 5;
+`;
+
+const HeaderContainer = styled.View`
+  height: ${SLIDE_HEIGHT + 30}px;
 `;
 
 const FooterContainer = styled.View`
@@ -125,7 +127,7 @@ const Dots = styled.View`
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 100px;
+  top: 15px;
 `;
 
 export default OnBoardingScreen;

@@ -9,12 +9,15 @@ const Button = ({
   title,
   onPress,
   marginVertical,
+  padding = 12,
   primary,
   width,
 }) => {
   return (
-    <Container {...{ bgColor, onPress, marginVertical, primary, width }}>
-      <Text button style={textStyle}>
+    <Container
+      {...{ bgColor, onPress, marginVertical, padding, primary, width }}
+    >
+      <Text button1 {...{ primary }} style={textStyle}>
         {title}
       </Text>
     </Container>
@@ -26,8 +29,9 @@ const Container = styled(RectButton)`
     bgColor,
     width,
     marginVertical,
+    padding,
     primary,
-    theme: { colors, space, radii },
+    theme: { colors, radii },
   }) => ({
     backgroundColor: bgColor
       ? bgColor
@@ -35,7 +39,7 @@ const Container = styled(RectButton)`
       ? colors.primary
       : colors.secondary,
     borderRadius: radii.s,
-    padding: space.s2,
+    padding,
     marginVertical,
     width,
   })}

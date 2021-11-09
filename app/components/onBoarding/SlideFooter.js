@@ -16,12 +16,12 @@ const SlideFooter = ({
     <Container>
       <TextBox>
         <Text h2>{title}</Text>
-        <Text body4 marginTop={12} center style={{ color: colors.darkGray2 }}>
+        <Text body4 marginTop={10} center style={{ color: colors.darkGray2 }}>
           {description}
         </Text>
       </TextBox>
       {last ? (
-        <Button title={buttonLabel} primary width={"100%"} />
+        <Button title={buttonLabel} primary width={"100%"} onPress={onPress} />
       ) : (
         <ButtonsBox>
           <Button
@@ -39,7 +39,6 @@ const SlideFooter = ({
 
 const Container = styled.View`
   flex: 1;
-  justify-content: space-between;
 
   ${({ theme: { space } }) => ({
     padding: space.m1,
@@ -48,11 +47,7 @@ const Container = styled.View`
 
 const TextBox = styled.View`
   align-items: center;
-
-  ${({ theme: { space } }) => ({
-    paddingBottom: space.s3,
-    marginBottom: space.l2,
-  })}
+  flex-grow: 1;
 `;
 
 const ButtonsBox = styled.View`

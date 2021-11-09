@@ -99,19 +99,28 @@ const body5Style = css`
 
 const dangerStyle = css`
   ${({ theme: { colors, fonts, size, space } }) => ({
-    color: colors.danger,
+    color: colors.red,
     fontFamily: fonts[3],
     fontSize: size.s1,
-    marginLeft: space.m2,
+    marginBottom: space.s1,
   })}
 `;
 
-const buttonStyle = css`
-  ${({ theme: { fonts, size, colors } }) => ({
+const button1Style = css`
+  ${({ primary, theme: { fonts, size, colors } }) => ({
     fontFamily: fonts[2],
-    fontSize: size.s3,
-    color: colors.white,
+    fontSize: size.s2,
+    color: primary ? colors.white : colors.darkBlue,
     textAlign: "center",
+    textTransform: "capitalize",
+  })}
+`;
+
+const button2Style = css`
+  ${({ primary, theme: { fonts, size, colors } }) => ({
+    fontFamily: fonts[3],
+    fontSize: size.s2,
+    color: primary ? colors.primary : colors.darkGray2,
     textTransform: "capitalize",
   })}
 `;
@@ -123,11 +132,11 @@ const Text = styled.Text`
     marginTop,
     marginBottom,
     white,
-    secondary,
+    light,
     opacity,
     theme: { colors },
   }) => ({
-    color: white ? colors.white : secondary ? colors.gray : colors.darkBlue,
+    color: white ? colors.white : light ? colors.gray : colors.darkBlue,
     textAlign: center ? "center" : right ? "right" : "left",
     marginBottom,
     marginTop,
@@ -139,7 +148,8 @@ const Text = styled.Text`
   ${({ body3 }) => body3 && body3Style}
   ${({ body4 }) => body4 && body4Style}
   ${({ body5 }) => body5 && body5Style}
-  ${({ button }) => button && buttonStyle}
+  ${({ button1 }) => button1 && button1Style}
+  ${({ button2 }) => button2 && button2Style}
   ${({ danger }) => danger && dangerStyle}
   ${({ h1 }) => h1 && h1Style}
   ${({ h2 }) => h2 && h2Style}

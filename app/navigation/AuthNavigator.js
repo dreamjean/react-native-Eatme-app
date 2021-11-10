@@ -16,8 +16,11 @@ const FeedNavigator = () => (
     <Stack.Screen name={routes.ON_BOADING} component={OnBoardingScreen} />
     <Stack.Screen name={routes.LOGIN} component={LoginScreen} />
     <Stack.Screen name={routes.REGISTER} component={RegisterScreen} />
-    <Stack.Screen name={routes.OTP} component={ForgotPasswordScreen} />
-    <Stack.Screen name={routes.FORGOT_PASSWROD} component={OtpScreen} />
+    <Stack.Screen
+      name={routes.FORGOT_PASSWROD}
+      component={ForgotPasswordScreen}
+    />
+    <Stack.Screen name={routes.OTP} component={OtpScreen} />
   </Stack.Navigator>
 );
 

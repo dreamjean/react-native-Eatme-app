@@ -34,7 +34,7 @@ const validationSchema = Yup.object().shape({
 const LoginScreen = ({ navigation }) => {
   // const [error, setError] = useState();
   const [securePassword, setSeurePassword] = useState(true);
-  const [isRemember, setIsRemember] = useState(false);
+  const [isRemembered, setIsRemembered] = useState(false);
   const [inputs] = useState({});
 
   const focusNextField = (nextField) => inputs[nextField].focus();
@@ -64,7 +64,7 @@ const LoginScreen = ({ navigation }) => {
           blurOnSubmit={false}
           clearButtonMode="while-editing"
           errorIcon="x-circle"
-          isRemember={isRemember}
+          isRemember={isRemembered}
           keyboardAppearance="default"
           keyboardType="email-address"
           leftIcon="mail"
@@ -82,8 +82,8 @@ const LoginScreen = ({ navigation }) => {
           autoCompleteType="password"
           autoCorrect={false}
           blurOnSubmit={false}
-          errorIcon={securePassword ? "eye-off" : "eye"}
-          isRemember={isRemember}
+          errorIcon="x-circle"
+          isRemember={isRemembered}
           keyboardAppearance="default"
           keyboardType="default"
           leftIcon="lock"
@@ -100,8 +100,8 @@ const LoginScreen = ({ navigation }) => {
         />
         <Wrapper>
           <CurrentSwitch
-            checked={isRemember}
-            onPress={() => setIsRemember((prev) => !prev)}
+            checked={isRemembered}
+            onPress={() => setIsRemembered((prev) => !prev)}
           />
           <Button
             title="Forgot Password?"
@@ -126,7 +126,7 @@ const Wrapper = styled.View`
   justify-content: space-between;
 
   ${({ theme: { space } }) => ({
-    marginBottom: space.m1,
+    marginBottom: space.s3,
   })}
 `;
 

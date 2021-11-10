@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 import { Text } from "../../styles";
 
-const TextButton = ({ caption, title, onPress, margin }) => {
+const TextButton = ({ caption, title, onPress }) => {
   return (
-    <Wrapper {...{ margin }}>
-      <Text button2 light>
+    <Wrapper>
+      <Text button2 light style={{ textTransform: "none" }}>
         {caption}
       </Text>
       <Pressable
@@ -25,9 +25,6 @@ const Wrapper = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  ${({ margin, theme: { space } }) => ({
-    margin: margin ? margin : space.s3,
-  })}
 `;
 
 const Title = styled(Text)`

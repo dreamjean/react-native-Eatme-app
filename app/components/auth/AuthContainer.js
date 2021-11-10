@@ -32,8 +32,17 @@ const AuthContainer = ({ title, subTitle, otp = false, children }) => {
         <Medium>{children}</Medium>
         {!otp && (
           <Social>
-            <SocialLogin fb label="Contaiue with fackbook" logo={icons.fb} />
-            <SocialLogin label="Contaiue with google" logo={icons.google} />
+            <SocialLogin
+              fb
+              label="Contaiue with fackbook"
+              logo={icons.fb}
+              onPress={() => true}
+            />
+            <SocialLogin
+              label="Contaiue with google"
+              logo={icons.google}
+              onPress={() => true}
+            />
           </Social>
         )}
         <StatusBar style="dark" />

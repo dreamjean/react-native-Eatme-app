@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 import { constants } from "../config";
 
-const { width, SLIDE_IMG_HEIGHT, SLIDE_IMG_WIDTH, LOGO_WIDTH } = constants;
+const { width, SLIDE_IMG_SIZE, LOGO_WIDTH } = constants;
 
 const avatarStyle = css`
   width: 50px;
@@ -19,8 +19,9 @@ const bgStyle = css`
 `;
 
 const boardingStyle = css`
-  width: ${SLIDE_IMG_WIDTH}px;
-  height: ${SLIDE_IMG_HEIGHT}px;
+  width: ${SLIDE_IMG_SIZE}px;
+  height: ${SLIDE_IMG_SIZE}px;
+  border-radius: ${SLIDE_IMG_SIZE / 2}px;
 `;
 
 const icon1Style = css`

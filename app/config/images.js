@@ -13,13 +13,10 @@ const chicagoHotDog = require("../assets/images/chicago-hot-dog.jpg");
 const crispyChickenBurger = require("../assets/images/crispy-chicken-burger.jpg");
 const desserts = require("../assets/images/desserts.jpg");
 const drinks = require("../assets/images/drinks.jpg");
-const favouriteFood = require("../assets/images/favourite_food.png");
 const friesRestaurant = require("../assets/images/fries-restaurant.jpg");
-const greatFood = require("../assets/images/great_food.png");
 const hawaiianPizza = require("../assets/images/hawaiian-pizza.jpg");
 const honeyMsCcBurger = require("../assets/images/honey-mustard-chicken-burger.jpg");
 const hotDogRestaurant = require("../assets/images/hot-dog-restaurant.jpg");
-const hotDelivery = require("../assets/images/hot_delivery.png");
 const hotdogs = require("../assets/images/hotdogs.jpg");
 const iceKacang = require("../assets/images/ice-kacang.jpg");
 const jpRestaurant = require("../assets/images/japanese-restaurant.jpg");
@@ -32,6 +29,10 @@ const nasiBryMutton = require("../assets/images/nasi-briyani-mutton.jpg");
 const nasiLemak = require("../assets/images/nasi-lemak.jpg");
 const noddle = require("../assets/images/noddle.jpg");
 const noddleShop = require("../assets/images/noodle-shop.jpg");
+const onBoarding1 = require("../assets/images/on_boarding1.jpg");
+const onBoarding2 = require("../assets/images/on_boarding2.jpg");
+const onBoarding3 = require("../assets/images/on_boarding3.png");
+const welcome = require("../assets/images/welcome.jpg");
 const pizzaRestaurant = require("../assets/images/pizza-restaurant.jpg");
 const pizza = require("../assets/images/pizza.jpg");
 const profile = require("../assets/images/profile.png");
@@ -65,12 +66,12 @@ export default {
   crispyChickenBurger,
   desserts,
   drinks,
-  favouriteFood,
+  // favouriteFood,
   friesRestaurant,
-  greatFood,
+  // greatFood,
   hawaiianPizza,
   honeyMsCcBurger,
-  hotDelivery,
+  // hotDelivery,
   hotDogRestaurant,
   hotdogs,
   iceKacang,
@@ -84,6 +85,10 @@ export default {
   nasiLemak,
   noddle,
   noddleShop,
+  onBoarding1,
+  onBoarding2,
+  onBoarding3,
+  welcome,
   pizza,
   pizzaRestaurant,
   profile,

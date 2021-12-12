@@ -3,29 +3,25 @@ import { images } from "../config";
 export default [
   {
     id: 1,
-    backgroundImage: images.background01,
-    bannerImage: images.favouriteFood,
-    title: "Choose a Favourite Food",
+    bannerImage: images.onBoarding1,
+    title: "Get a variety of choices to choose!",
     description:
-      "When you oder Eat Steet, we’ll hook you up with exclusive coupon, specials and rewards",
+      "Find your favorite food any time and any place you go to in or out your city.",
     buttonLabel: "next",
   },
   {
     id: 2,
-    backgroundImage: images.background02,
-    bannerImage: images.hotDelivery,
-    title: "Hot Delivery to Home",
+    bannerImage: images.onBoarding2,
+    title: "Receive High quality food close to you!",
     description:
-      "We make food ordering fasr, simple and free-no matter if you order online or cash",
+      "Get High quality meals of your choice from the places close to you.",
     buttonLabel: "next",
   },
   {
     id: 3,
-    backgroundImage: images.background01,
-    bannerImage: images.greatFood,
-    title: "Receive the Great Food",
-    description:
-      "You’ll receive the great food within a hour. And get free delivery credits for every order.",
+    bannerImage: images.onBoarding3,
+    title: "Pick your Meal at Your door Steps!",
+    description: "Your meals at your door steps just from one easy click.",
     buttonLabel: "Let's Get Started",
   },
 ];

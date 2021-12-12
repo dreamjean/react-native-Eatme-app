@@ -7,5 +7,6 @@ export { default as IconButton } from "./IconButton";
 export { default as PaginationDot } from "./onBoarding/PaginationDot";
 export { default as SlideFooter } from "./onBoarding/SlideFooter";
 export { default as SlideHeader } from "./onBoarding/SlideHeader";
+export { default as SlideImage } from "./onBoarding/SlideImage";
 export { default as SearchInput } from "./SearchInput";
 export { default as Theme } from "./Theme";

@@ -21,12 +21,12 @@ const PaginationDot = ({ index, activeIndex }) => {
       Extrapolate.CLAMP
     );
     return {
-      backgroundColor: colors.primary,
+      backgroundColor: colors.gold2,
       width,
       height: 10,
       borderRadius: 5,
       opacity,
-      margin: 5,
+      margin: 4,
     };
   });
 

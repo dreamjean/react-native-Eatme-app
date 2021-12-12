@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { Platform } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
 import styled from "styled-components/native";
 
 import { colors, icons, images } from "../../config";
@@ -13,7 +13,7 @@ const AuthContainer = ({ title, subTitle, otp = false, children }) => {
       contentContainerStyle={{ flexGrow: 1 }}
       extraScrollHeight={100}
       enableOnAndroid
-      enableAutoAutomaticScrol={Platform.OS === "ios"}
+      enableAutoAutomaticScroll={Platform.OS === "ios"}
       keyboardShouldPersistTaps="always"
       showsVerticalScrollIndicator={false}
     >
@@ -34,12 +34,12 @@ const AuthContainer = ({ title, subTitle, otp = false, children }) => {
           <Social>
             <SocialLogin
               fb
-              label="Contaiue with fackbook"
+              label="Continue with Facebook"
               logo={icons.fb}
               onPress={() => true}
             />
             <SocialLogin
-              label="Contaiue with google"
+              label="Continue with Google"
               logo={icons.google}
               onPress={() => true}
             />

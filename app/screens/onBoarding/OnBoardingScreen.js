@@ -8,11 +8,15 @@ import Animated, {
 } from "react-native-reanimated";
 import styled from "styled-components";
 
-import { PaginationDot, SlideFooter, SlideHeader } from "../../components";
-import { constants, images } from "../../config";
+import {
+  PaginationDot,
+  SlideFooter,
+  SlideHeader,
+  SlideImage,
+} from "../../components";
+import { constants } from "../../config";
 import slides from "../../data/slides";
 import routes from "../../navigation/routes";
-import { Image } from "../../styles";
 
 const { width, SLIDE_HEIGHT } = constants;
 
@@ -41,9 +45,13 @@ const OnBoardingScreen = ({ navigation }) => {
   return (
     <Container>
       <HeaderContainer>
-        <LogoBox>
-          <Image logo1 source={images.logo02} />
-        </LogoBox>
+        {slides.map(({ bannerImage }, index) => (
+          <SlideImage
+            key={`bannerImg${index}`}
+            image={bannerImage}
+            {...{ x, index }}
+          />
+        ))}
 
         <Animated.ScrollView
           ref={scroll}
@@ -65,11 +73,6 @@ const OnBoardingScreen = ({ navigation }) => {
         </Animated.ScrollView>
       </HeaderContainer>
       <FooterContainer>
-        <Dots>
-          {slides.map((_, index) => (
-            <PaginationDot key={`dot${index}`} {...{ index, activeIndex }} />
-          ))}
-        </Dots>
         <Animated.View style={style}>
           {slides.map((slide, index) => (
             <SlideFooter
@@ -80,9 +83,6 @@ const OnBoardingScreen = ({ navigation }) => {
               last={index === slides.length - 1}
               onSkipPress={() => navigation.navigate(routes.LOGIN)}
               onPress={() => {
-                const lastIndex = index === slides.length - 1;
-                if (lastIndex) navigation.navigate("Login");
-
                 scroll.current.scrollTo({
                   x: width * (index + 1),
                   animated: true,
@@ -91,8 +91,13 @@ const OnBoardingScreen = ({ navigation }) => {
             />
           ))}
         </Animated.View>
+        <Dots>
+          {slides.map((_, index) => (
+            <PaginationDot key={`dot${index}`} {...{ index, activeIndex }} />
+          ))}
+        </Dots>
       </FooterContainer>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
     </Container>
   );
 };
@@ -105,15 +110,8 @@ const Container = styled.View`
   })}
 `;
 
-const LogoBox = styled.View`
-  position: absolute;
-  top: 40px;
-  align-self: center;
-  z-index: 5;
-`;
-
 const HeaderContainer = styled.View`
-  height: ${SLIDE_HEIGHT + 30}px;
+  height: ${SLIDE_HEIGHT}px;
 `;
 
 const FooterContainer = styled.View`
@@ -127,7 +125,7 @@ const Dots = styled.View`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 15px;
+  bottom: 100px;
 `;
 
 export default OnBoardingScreen;
